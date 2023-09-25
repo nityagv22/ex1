@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Registration Form</title>
+    <style>
+        
+        body{
+            background-image: linear-gradient(rgb(244, 245, 199), rgb(231, 176, 237));
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        input.inp{
+            width: 98.7%;
+        }
+        th{
+            text-align: center;
+            font-style: bold;
+        }
+        tr.my{
+            text-align: right;
+        }
+        button.reg{
+            border-radius: 15px;
+            background-color: red;
+            color: white;
+            width: 110px;
+            height: 30px;
+        }
+        p{
+            color: red;
+        }
+
+    </style>
+</head>
+
+<body><div class = "full">
+    <form >
+      <center>
+        <table>
+            <caption style="color: blue; font-size: 30px;"><b>Registration form</b></caption>
+            
+            <tr>
+                <th><label for="fn">First Name</label></th>
+                <td><input type="text" name="fn" class="inp" id = "fn" ></td>
+                <td><p id="demo1"></p></td>
+            </tr>
+            <tr>
+                <th><label for="ln">Last Name</label></th>
+                <td><input type="text" name="ln" id= "ln" class ="inp"></td>
+                <td><p id="demo2"></p></td>
+            </tr>
+            <tr>
+                <th><label for="email">Email</label></th>
+                <td><input type="email" name="email" id= "email" class= "inp"></td>
+                <td><p id="demo3"></p></td>
+            </tr>
+            <tr>
+                <th><label for="pass">Password</label></th>
+                <td><input type="password" name="pass" id= "pass" class= "inp"></td>
+                <td><p id="demo4"></p></td>
+            </tr>
+            <tr>
+                <th><label for="repass">Re-enter Password</label></th>
+                <td><input type="password" name="repass" id="repass" class ="inp"></td>
+                <td><p id="demo5"></p></td>
+            </tr>
+            <tr>
+                <th rowspan = "2"><label>Gender</label></th>
+                <td>
+                    <input type="radio" name="gender">Male</td>
+                
+            </tr>
+            <tr><td><input type="radio" name="gender">Female
+            </td></tr>
+            <tr>
+                <th><label for="age">Age:</label></th>
+                <td><input type="number" name="age" id= "age" class = "inp"></td>
+                <td><p id="demo6"></p></td>
+            </tr>
+            <tr>
+                <th><label for="phn">Phone number:</label></th>
+                <td><input type="number" name="phn" id= "phn" class = "inp"></td>
+                <td><p id="demo7"></p></td>
+            </tr>
+            <tr>
+                <th><label for ="add">Address:</label></th>
+                <td><textarea name = "add" cols = "80" rows = "6" id = "add"></textarea></td>
+                <td><p id="demo8"></p></td>
+            </tr>
+            <tr>
+                <th><label for ="state">State:</label></th>
+                <td><input type="text" name="state" id="state" class="inp"></td>
+                <td><p id="demo9"></p></td>
+            </tr>
+            <tr>
+                <th><label>Country</label></th>
+                <td>
+                    <select>
+                        <option>Choose your country</option>
+                        <option>India</option>
+                        <option>United States Of America</option>
+                        <option>Spain</option>
+                        <option>England</option>
+                        <option>Italy</option>
+                        <option>Taiwan</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th><label>Languages known</label></th>
+                <td>
+                    <input type="checkbox">English
+                    <input type="checkbox">Kannada
+                    <input type="checkbox">Hindi
+                    <input type="checkbox">Telugu
+                </td>
+            </tr>
+            <tr><td colspan="2"><input type="checkbox"> Hereby I declare all the given details are true</td></tr>
+            <tr class="my"><td colspan="2" >Login in to <a href ="https://codemithra.com/">Ethnus </a>website</right></td></tr>
+            </table><br>
+                <button class = "reg" type="button" onclick="validateForm()">Register</button><br><br>
+      </center>
+    </form>
+   
+    <script>
+        function validateForm(){
+            let fn = document.getElementById("fn").value;
+            let al;
+            if (name==null || name == ""){
+                al = "POOR"
+            }
+            document.getElementById("demo1").innerHTML = al;
+
+            let ln = document.getElementById("ln").value;
+            let al1;
+            if (name==null || name == ""){
+                al1 = "POOR"
+            }
+            document.getElementById("demo2").innerHTML = al1;
+            
+            let email = document.getElementById("email").value;
+            let al2;
+            if (email==null || email == ""){
+                al2 = "POOR"
+            }
+            document.getElementById("demo3").innerHTML = al2;
+
+            let pass = document.getElementById("pass").value;
+            let al3;
+            if (pass==null || pass == ""){
+                al3 = "POOR"
+            }
+            document.getElementById("demo4").innerHTML = al3;
+
+            let repass = document.getElementById("repass").value;
+            let al4;
+            if (repass==null || repass == "" || repass != pass){
+                al4 = "POOR OR MISMATCH"
+            }
+            document.getElementById("demo5").innerHTML = al4;
+
+            let age = document.getElementById("age").value;
+            let al5;
+            if (age==null || age == ""){
+                al5 = "POOR"
+            }
+            document.getElementById("demo6").innerHTML = al5;
+
+            let phn = document.getElementById("phn").value;
+            let al6;
+            if (phn==null || phn == ""){
+                al6 = "POOR"
+            }
+            document.getElementById("demo7").innerHTML = al6;
+
+            let add = document.getElementById("add").value;
+            let al7;
+            if (add==null || add == ""){
+                al7 = "POOR"
+            }
+            document.getElementById("demo8").innerHTML = al7;
+
+            let state = document.getElementById("state").value;
+            let al8;
+            if (state==null || state == ""){
+                al8 = "POOR"
+            }
+            document.getElementById("demo9").innerHTML = al8;
+        }
+
+
+    </script>
+
+</div>
+
+</body>
+
+</html>

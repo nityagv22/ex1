@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Animation</title>
+    <style>
+        body{
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            text-align: center;
+        }
+        p{
+            color: blue;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <img id = "train" src = "./train.gif">
+        <p>Click the buttons below to handle animation</p>
+        <input type = "button" value = "Start" onclick = "move();">
+        <input type = "button" value = "Stop" onclick = "stop();">
+     </form>
+
+     <script>
+          var imgObj = null;
+          var animate ;
+          
+          function init() {
+             imgObj = document.getElementById('train');
+             imgObj.style.position= 'relative'; 
+             imgObj.style.left = '0px'; 
+          }
+          
+          function move() {
+             imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+             animate = setTimeout(move,20);  
+          }
+          
+          function stop() {
+             clearTimeout(animate);
+             imgObj.style.left = '0px'; 
+          }
+    
+          window.onload = init;
+    </script>
+</body>
+</html>
